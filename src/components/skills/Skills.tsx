@@ -1,19 +1,20 @@
 import React from 'react';
 import styles from "./Skills.module.css"
 import stylesContainer from "../../common/styles/Container.module.css"
-import {Skill} from "./skill/Skill";
+import {Skill, SkillType} from "./skill/Skill";
 
-export const Skills = () => {
+type SkillsType = {
+    skills: Array<SkillType>
+}
+
+export const Skills: React.FC<SkillsType> = (props) => {
     return (
         <div className={styles.skillsBlock}>
             <div className={`${stylesContainer.container} ${styles.skillsContainer}`}>
                 <h2 className={styles.title}>Skills</h2>
                 <div className={styles.skills}>
-                    <Skill title={"HTML"} description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}/>
-                    <Skill title={"CSS"} description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}/>
-                    <Skill title={"JS"} description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}/>
-                    <Skill title={"JS"} description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}/>
-                    <Skill title={"JS"} description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}/>
+                    {props.skills.map(skill => <Skill title={skill.title} description={skill.description}/>)}
+
                 </div>
             </div>
         </div>
