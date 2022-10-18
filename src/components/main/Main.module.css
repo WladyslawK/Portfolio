@@ -1,0 +1,22 @@
+.main{
+    height: 100vh;
+    background-color: lightgreen;
+}
+.greeting{
+    width: 450px;
+    background-color: hotpink;
+}
+.photo{
+    width: 450px;
+    height: 400px;
+    background-color: hotpink;
+}
+.container{
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
