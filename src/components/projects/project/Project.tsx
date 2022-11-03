@@ -11,7 +11,10 @@ type ProjectFCType = {
 export const Project: React.FC<ProjectFCType> = (props) => {
     return (
          <div className={styles.mainContainer}>
-             <img src={props.url} alt="project-img"/>
+             <div className={styles.imgContainer} style={{backgroundImage: `url("${props.url}")`, backgroundSize: "cover", backgroundPosition: "center"}}>
+                 <span><a href={"#"}>View Project</a></span>
+
+             </div>
              <h4>{props.title}</h4>
              <p>
                  {props.description}

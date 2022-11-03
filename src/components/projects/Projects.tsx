@@ -10,20 +10,22 @@ type ProjectsFCType = {
 
 export const Projects: React.FC<ProjectsFCType> = (props) => {
     return (
-        <>
-            <div className={styles.mainContainer}>
-                <div className={`${stylesContainer.container} ${styles.container}`}>
-                    <h3>My Projects</h3>
-                    <div className={styles.projectsContainer}>
-                        {
-                            props.projects.map(project => <Project key={project.id} title={project.title}
-                                                                   description={project.description} url={project.url}/>)
-                        }
-                    </div>
-                </div>
+        <div className={styles.mainContainer}>
 
+            <div className={`${stylesContainer.container} ${styles.container}`}>
+                <h2>My Projects</h2>
+                <div className={styles.projectsContainer}>
+                    {
+                        props.projects.map(project => <Project
+                            key={project.id}
+                            title={project.title}
+                            description={project.description}
+                            url={project.url}/>)
+                    }
+                </div>
             </div>
-        </>
+
+        </div>
 
     );
 };
